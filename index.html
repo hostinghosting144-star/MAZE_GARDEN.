@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mataha Maze - Nature's Labyrinth</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#home" class="logo">
+                    <img src="logo.png" alt="Maze_Garden" class="logo-img">
+                </a>
+                
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="#home" class="active" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                    <li><a href="Add_event.html" data-en="Add Event" data-ar="إضافة فعالية">Add Event</a></li>
+                    <li><a href="Add_complaint.html" data-en="Add Complaint" data-ar="إضافة شكوى">Add Complaint</a></li>
+                    <li><a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                    <li style="color:green;"><a href="login.html" data-en="Login" data-ar="تسجيل الدخول">Login</a></li>
+                    <!-- Language Switcher -->
+                    <li class="language-switcher">
+                        <button onclick="setLang('en')" class="lang-btn active">EN</button>
+                        <button onclick="setLang('ar')" class="lang-btn">عربي</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<!-- Vertical Badge -->
+<a href="https://www.facebook.com/siineai" class="vertical-badge" aria-label="About Me / Portfolio">
+    <div class="badge-logo-container">
+        <img src="logo png.png" alt="Logo" class="badge-logo">
+    </div>
+    <div class="badge-text" data-en="created by" data-ar="صمم بواسطة">created by</div>
+</a>
+
+    <!-- Hero Video Section -->
+    <section class="hero-video-section" id="home">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline id="maze-hero-video">
+                <source src="vedio4nv.mp4" type="video/mp4">
+                <source src="vedio4nv.webm" type="video/webm">
+                <!-- Fallback image -->
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Maze hero video">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="video-overlay"></div>
+            
+            <div class="video-controls">
+                <button class="video-control-btn" id="play-pause-btn">
+                    <i class="fas fa-pause"></i>
+                </button>
+                
+                <button class="video-control-btn" id="mute-unmute-btn">
+                    <i class="fas fa-volume-mute"></i>
+                </button>
+                
+                <div class="video-time-display">
+                    <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                </div>
+            </div>
+            
+            <div class="hero-video-content">
+                <h1 data-en="Discover the Mysteries of MAZE_GARDEN" data-ar="اكتشف أسرار متاهة الحديقة">Discover the Mysteries of MAZE_GARDEN</h1>
+                <p data-en="Immerse yourself in a labyrinth of natural beauty, where winding paths lead to unexpected discoveries and peaceful moments. Experience the harmony of nature's design in our living green maze." data-ar="اغمر نفسك في متاهة من الجمال الطبيعي، حيث تقودك المسارات المتعرجة إلى اكتشافات غير متوقعة ولحظات هادئة. جرب تناغم تصميم الطبيعة في متاهتنا الخضراء الحية.">Immerse yourself in a labyrinth of natural beauty, where winding paths lead to unexpected discoveries and peaceful moments. Experience the harmony of nature's design in our living green maze.</p>
+                <a href="#main-events" class="btn-explore" data-en="Explore Events" data-ar="استكشف الفعاليات">Explore Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Events Section (Horizontal Slider) -->
+    <section class="events-slider-section" id="main-events">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Main Events" data-ar="الفعاليات الرئيسية">Main Events</h2>
+                <p data-en="Featured maze experiences you won't want to miss" data-ar="تجارب متاهة مميزة لن ترغب في تفويتها">Featured maze experiences you won't want to miss</p>
+            </div>
+            
+            <div class="events-slider-container">
+                <button class="slider-nav-btn prev-btn" aria-label="Previous events">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="events-slider">
+                    <!-- Event Card 1 -->
+                    <div class="event-slide">
+                        <div class="event-img-container">
+                            <img src="monllight.jpg" alt="Moonlight Maze Walk" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3 data-en="Moonlight Maze Walk" data-ar="مشوار المتاهة تحت ضوء القمر">Moonlight Maze Walk</h3>
+                            <p data-en="Experience the maze under the stars with guided lantern tours and nighttime nature sounds." data-ar="جرب المتاهة تحت النجوم مع جولات الفوانيس المرشدة وأصوات الطبيعة الليلية.">Experience the maze under the stars with guided lantern tours and nighttime nature sounds.</p>
+                            <div class="event-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>June 15, 2026</span>
+                            </div>
+                            <button class="btn-event-details" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Card 2 -->
+                    <div class="event-slide">
+                        <div class="event-img-container">
+                            <img src="rabi3.jpg" alt="Spring Blossom Festival" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3 data-en="Spring Blossom Festival" data-ar="مهرجان أزهار الربيع">Spring Blossom Festival</h3>
+                            <p data-en="Celebrate the season of renewal with floral displays, garden tours, and maze challenges." data-ar="احتفل بموسم التجديد مع عروض الزهور وجولات الحديقة وتحديات المتاهة.">Celebrate the season of renewal with floral displays, garden tours, and maze challenges.</p>
+                            <div class="event-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>April 22, 2026</span>
+                            </div>
+                            <button class="btn-event-details" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Card 3 -->
+                    <div class="event-slide">
+                        <div class="event-img-container">
+                            <img src="family.jpg" alt="Family Maze Adventure" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3 data-en="Family Maze Adventure" data-ar="مغامرة المتاهة العائلية">Family Maze Adventure</h3>
+                            <p data-en="A day of fun for all ages with treasure hunts, picnics, and interactive nature activities." data-ar="يوم من المرح لجميع الأعمار مع البحث عن الكنوز والنزهات والأنشطة الطبيعية التفاعلية.">A day of fun for all ages with treasure hunts, picnics, and interactive nature activities.</p>
+                            <div class="event-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>July 8, 2026</span>
+                            </div>
+                            <button class="btn-event-details" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Card 4 -->
+                    <div class="event-slide">
+                        <div class="event-img-container">
+                            <img src="photograph.jpg" alt="Maze Photography Workshop" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3 data-en="Maze Photography Workshop" data-ar="ورشة تصوير المتاهة">Maze Photography Workshop</h3>
+                            <p data-en="Learn to capture the beauty of the maze with professional photographers guiding you." data-ar="تعلم التقاط جمال المتاهة مع توجيه مصورين محترفين.">Learn to capture the beauty of the maze with professional photographers guiding you.</p>
+                            <div class="event-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>August 12, 2026</span>
+                            </div>
+                            <button class="btn-event-details" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Card 5 -->
+                    <div class="event-slide">
+                        <div class="event-img-container">
+                            <img src="autumn.jpg" alt="Autumn Maze Festival" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3 data-en="Autumn Maze Festival" data-ar="مهرجان المتاهة الخريفي">Autumn Maze Festival</h3>
+                            <p data-en="Celebrate autumn with seasonal decorations, harvest activities, and maze games." data-ar="احتفل بالخريف مع الزخارف الموسمية وأنشطة الحصاد وألعاب المتاهة.">Celebrate autumn with seasonal decorations, harvest activities, and maze games.</p>
+                            <div class="event-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>September 30, 2026</span>
+                            </div>
+                            <button class="btn-event-details" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Card 6 -->
+                    <div class="event-slide">
+                        <div class="event-img-container">
+                            <img src="challenge.jpg" alt="Yoga in the Maze" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3 data-en="Maze Challenge" data-ar=" مسابقة المتاهة">Maze Challenge</h3>
+                            <p data-en="Solve the maze as fast as you can.
+Avoid obstacles and reach the exit to win." data-ar="حلّ المتاهة بأسرع وقت ممكن.تجنب العقبات واصل إلى المخرج للفوز"></p>
+                            <div class="event-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>November 5, 2026</span>
+                            </div>
+                            <button class="btn-event-details" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="slider-nav-btn next-btn" aria-label="Next events">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="slider-dots">
+                <!-- Dots will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Section (Horizontal Slider) -->
+    <section class="events-slider-section upcoming-events-slider" id="upcoming-events">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Upcoming Events" data-ar="الفعاليات القادمة">Upcoming Events</h2>
+                <p data-en="Mark your calendar for these future maze experiences" data-ar="حدد موعدك لتجارب المتاهة المستقبلية">Mark your calendar for these future maze experiences</p>
+            </div>
+            
+            <div class="events-slider-container">
+                <button class="slider-nav-btn prev-btn" aria-label="Previous events">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="events-slider">
+                    <!-- Event Card 1 -->
+                   
+                    
+                    <!-- Event Card 2 -->
+                    <div class="event-slide">
+                        <div class="event-img-container">
+                            <img src="walk.jpg" alt="Winter Solstice Walk" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3 data-en="Winter Solstice Walk" data-ar="مشوار الانقلاب الشتوي">Winter Solstice Walk</h3>
+                            <p data-en="Celebrate the shortest day of the year with a guided walk through the decorated maze." data-ar="احتفل بأقصر يوم في السنة مع مشوار مرشد عبر المتاهة المزينة.">Celebrate the shortest day of the year with a guided walk through the decorated maze.</p>
+                            <div class="event-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>December 21, 2026</span>
+                            </div>
+                            <button class="btn-event-details" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Card 3 -->
+                    <div class="event-slide">
+                        <div class="event-img-container">
+                            <img src="3asafir.jpg" alt="Birdwatching in the Maze" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3 data-en="Birdwatching in the Maze" data-ar="مراقبة الطيور في المتاهة">Birdwatching in the Maze</h3>
+                            <p data-en="Join our naturalist for a morning of birdwatching and learning about local wildlife." data-ar="انضم إلى عالم الطبيعة لدينا لصباح من مراقبة الطيور والتعرف على الحياة البرية المحلية.">Join our naturalist for a morning of birdwatching and learning about local wildlife.</p>
+                            <div class="event-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>May 5, 2026</span>
+                            </div>
+                            <button class="btn-event-details" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Card 4 -->
+                    <div class="event-slide">
+                        <div class="event-img-container">
+                            <img src="rabi3i.jpg" alt="Spring Equinox Celebration" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3 data-en="Spring Equinox Celebration" data-ar="احتفال الاعتدال الربيعي">Spring Equinox Celebration</h3>
+                            <p data-en="Welcome spring with sunrise yoga, guided meditations, and maze exploration." data-ar="رحب بالربيع مع يوجا شروق الشمس والتأملات المرشدة واستكشاف المتاهة.">Welcome spring with sunrise yoga, guided meditations, and maze exploration.</p>
+                            <div class="event-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>March 20, 2026</span>
+                            </div>
+                            <button class="btn-event-details" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Card 5 -->
+                    <div class="event-slide">
+                        <div class="event-img-container">
+                            <img src="sayf.jpg" alt="Summer Solstice Festival" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3 data-en="Summer Solstice Festival" data-ar="مهرجان الانقلاب الصيفي">Summer Solstice Festival</h3>
+                            <p data-en="Celebrate the longest day of the year with music, food, and extended maze hours." data-ar="احتفل بأطول يوم في السنة مع الموسيقى والطعام وساعات عمل موسعة للمتاهة.">Celebrate the longest day of the year with music, food, and extended maze hours.</p>
+                            <div class="event-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>June 21, 2026</span>
+                            </div>
+                            <button class="btn-event-details" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Card 6 -->
+                    <div class="event-slide">
+                        <div class="event-img-container">
+                            <img src="tswir f lil.jpg" alt="Night Photography Workshop" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3 data-en="Night Photography Workshop" data-ar="ورشة التصوير الليلي">Night Photography Workshop</h3>
+                            <p data-en="Capture the maze under the moonlight with expert guidance on night photography techniques." data-ar="التقط المتاهة تحت ضوء القمر مع توجيه خبير في تقنيات التصوير الليلي.">Capture the maze under the moonlight with expert guidance on night photography techniques.</p>
+                            <div class="event-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>July 15, 2026</span>
+                            </div>
+                            <button class="btn-event-details" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="slider-nav-btn next-btn" aria-label="Next events">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="slider-dots">
+                <!-- Dots will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                       
+                        <span>MAZE_</span>GARDEN
+                    </div>
+                    <p data-en="Experience the wonder of nature's labyrinth. Mataha Maze is a living, breathing work of art that changes with the seasons." data-ar="جرب روعة متاهة الطبيعة. متاهة متاهة هي عمل فني حي يتنفس ويتغير مع الفصول.">Experience the wonder of nature's labyrinth. Mataha Maze is a living, breathing work of art that changes with the seasons.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                    <ul>
+                        <li><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                        <li><a href="#main-events" data-en="Main Events" data-ar="الفعاليات الرئيسية">Main Events</a></li>
+                        <li><a href="#upcoming-events" data-en="Upcoming Events" data-ar="الفعاليات القادمة">Upcoming Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4 data-en="Stay Updated" data-ar="ابقَ على اطلاع">Stay Updated</h4>
+                    <p data-en="Subscribe to get updates on new events and maze news." data-ar="اشترك للحصول على تحديثات حول الفعاليات الجديدة وأخبار المتاهة.">Subscribe to get updates on new events and maze news.</p>
+                    <div class="newsletter-placeholder">
+                        <p data-en="Newsletter coming soon!" data-ar="النشرة الإخبارية قريباً!">Newsletter coming soon!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-en="&copy; 2026. MAZE_GARDEN. | Designed BY Siine AI Center  " data-ar="&copy; 2026. MAZE_GARDEN. | صمم بواسطة مركز سين للذكاء الاصطناعي  ">&copy; 2026. MAZE_GARDEN. | Designed BY Siine AI Center <i class="fas fa-heart"></i> for nature lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Add translation script -->
+    <script>
+        // Language management
+        function setLang(lang) {
+            // Save preference to localStorage
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Update button active states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update html lang and dir attributes
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            // Update all elements with data attributes
+            document.querySelectorAll('[data-en], [data-ar]').forEach(element => {
+                if (lang === 'en' && element.hasAttribute('data-en')) {
+                    element.textContent = element.getAttribute('data-en');
+                } else if (lang === 'ar' && element.hasAttribute('data-ar')) {
+                    element.textContent = element.getAttribute('data-ar');
+                }
+            });
+            
+            // Update title
+            document.title = lang === 'ar' ? 'متاهة متاهة - متاهة الطبيعة' : 'Garden_Maze - Nature\'s Labyrinth';
+        }
+        
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for saved language preference
+            const savedLang = localStorage.getItem('preferredLanguage');
+            let defaultLang = 'en';
+            
+            // If we have a saved language, use it
+            if (savedLang === 'en' || savedLang === 'ar') {
+                defaultLang = savedLang;
+            } 
+            // Otherwise, check browser language
+            else if (navigator.language.startsWith('ar')) {
+                defaultLang = 'ar';
+            }
+            
+            // Set the language
+            setLang(defaultLang);
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('onclick') === `setLang('${defaultLang}')`) {
+                    btn.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script>
+function setLang(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('[data-en],[data-ar]').forEach(el => {
+        el.textContent = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-ar');
+    });
+
+    document.querySelectorAll('[data-en-placeholder],[data-ar-placeholder]').forEach(el => {
+        el.placeholder = lang === 'en' ? el.getAttribute('data-en-placeholder') : el.getAttribute('data-ar-placeholder');
+    });
+
+    document.title = lang === 'ar' ? 'حديقة متاهة' : 'MAZE_GARDEN ';
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick') === `setLang('${lang}')`) btn.classList.add('active');
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage');
+    let defaultLang = savedLang === 'en' || savedLang === 'ar' ? savedLang : (navigator.language.startsWith('ar') ? 'ar' : 'en');
+    setLang(defaultLang);
+});
+</script>
+<script>
+function setLang(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('[data-en],[data-ar]').forEach(el => {
+        el.textContent = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-ar');
+    });
+
+    document.querySelectorAll('[data-en-placeholder],[data-ar-placeholder]').forEach(el => {
+        el.placeholder = lang === 'en' ? el.getAttribute('data-en-placeholder') : el.getAttribute('data-ar-placeholder');
+    });
+
+    document.title = lang === 'ar' ? 'حديقة متاهة' : 'MAZE_GARDEN ';
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick') === `setLang('${lang}')`) btn.classList.add('active');
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLang = localStorage.getItem('preferredLanguage');
+    let defaultLang = savedLang === 'en' || savedLang === 'ar' ? savedLang : (navigator.language.startsWith('ar') ? 'ar' : 'en');
+    setLang(defaultLang);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Mataha Maze Garden</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles specific to contact page */
+        :root {
+            --primary-green: #2e7d32;
+            --secondary-green: #4caf50;
+            --light-green: #8bc34a;
+            --dark-green: #1b5e20;
+            --earth-brown: #8d6e63;
+            --light-brown: #d7ccc8;
+            --white: #ffffff;
+            --off-white: #f9f9f9;
+            --shadow: rgba(46, 125, 50, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        .contact-hero {
+            background: linear-gradient(rgba(42, 254, 56, 0.8), rgba(27, 94, 32, 0.9)), url('');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+
+        .contact-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+        .breadcrumb a {
+            color: var(--light-green);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .breadcrumb i {
+            margin: 0 10px;
+            font-size: 0.8rem;
+        }
+
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .contact-info {
+            background-color: var(--off-white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .contact-info h2 {
+            color: var(--dark-green);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--light-green);
+            font-size: 2.2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            background-color: var(--light-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .contact-method:hover .contact-icon {
+            background-color: var(--primary-green);
+            transform: scale(1.1);
+        }
+
+        .contact-details h3 {
+            color: var(--dark-green);
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+
+        .contact-details p {
+            color: #666;
+            margin-bottom: 5px;
+            line-height: 1.6;
+        }
+
+        .contact-details a {
+            color: var(--primary-green);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-details a:hover {
+            color: var(--light-green);
+            text-decoration: underline;
+        }
+
+        .social-contact {
+            margin-top: 40px;
+        }
+
+        .social-contact h3 {
+            color: var(--dark-green);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .social-icons-contact {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons-contact a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+
+        .social-icons-contact a:hover {
+            background-color: var(--light-green);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .contact-form h2 {
+            color: var(--dark-green);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--light-green);
+            font-size: 2.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark-green);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--light-green);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(139, 195, 74, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(46, 125, 50, 0.3);
+        }
+
+        .btn-submit i {
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover i {
+            transform: translateX(5px);
+        }
+
+        .map-section {
+            padding: 60px 0;
+            background-color: var(--off-white);
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow);
+            height: 400px;
+        }
+
+        .map-placeholder {
+            height: 100%;
+            background: linear-gradient(135deg, var(--light-green), var(--primary-green));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .map-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .map-placeholder h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .map-placeholder p {
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .faq-section {
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            background-color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question h3 {
+            color: var(--dark-green);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .faq-question i {
+            color: var(--light-green);
+            transition: var(--transition);
+        }
+
+        .faq-question.active {
+            background-color: var(--off-white);
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: white;
+        }
+
+        .faq-answer.open {
+            padding: 20px 25px;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .contact-hero {
+                padding: 100px 0 60px;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .contact-info, .contact-form {
+                padding: 30px;
+            }
+            
+            .contact-info h2, .contact-form h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-method {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .contact-icon {
+                margin-bottom: 15px;
+            }
+            
+            .map-placeholder h3 {
+                font-size: 1.5rem;
+            }
+            
+            .map-placeholder p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-hero p {
+                font-size: 1rem;
+            }
+            
+            .contact-info, .contact-form {
+                padding: 25px 20px;
+            }
+            
+            .contact-info h2, .contact-form h2 {
+                font-size: 1.6rem;
+            }
+            
+            .social-icons-contact a {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+            
+            .btn-submit {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            .map-placeholder {
+                padding: 30px 20px;
+            }
+            
+            .map-placeholder h3 {
+                font-size: 1.3rem;
+            }
+            
+            .faq-question {
+                padding: 15px 20px;
+            }
+            
+            .faq-question h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Success message styles */
+        .success-message {
+            background-color: #e8f5e9;
+            color: var(--dark-green);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            display: none;
+            border-left: 5px solid var(--light-green);
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Loading animation for form submission */
+        .loading {
+            position: relative;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+   
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="Mataha Maze Garden Logo" class="logo-img">
+                </a>
+                
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                    <li><a href="Add_event.html" data-en="Add Event" data-ar="إضافة فعالية">Add Event</a></li>
+                    <li><a href="Add_complaint.html" data-en="Add Complaint" data-ar="إضافة شكوى">Add Complaint</a></li>
+                    <li><a href="contact.html" class="active" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                    <li><a style="color:green;"href="login.html" data-en="Login" data-ar="تسجيل الدخول">Login</a></li>
+                    <!-- Language Switcher -->
+                    <li class="language-switcher">
+                        <button onclick="setLang('en')" class="lang-btn active">EN</button>
+                        <button onclick="setLang('ar')" class="lang-btn">عربي</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Vertical Badge -->
+    <a href="https://www.facebook.com/siineai" class="vertical-badge" aria-label="About Me / Portfolio">
+        <div class="badge-logo-container">
+            <img src="logo png.png" alt="Logo" class="badge-logo">
+        </div>
+        <div class="badge-text" data-en="created by" data-ar="صمم بواسطة">created by</div>
+    </a>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero" id="contact-hero">
+        <div class="container">
+            <h1 data-en="Get in Touch with Mataha Maze" data-ar="تواصل معنا  ">Get in Touch with Mataha Maze</h1>
+            <p data-en="Have questions about our maze garden, upcoming events, or planning your visit? We're here to help! Reach out to us using any of the methods below." data-ar="هل لديك أسئلة حول حديقة المتاهة لدينا، أو الفعاليات القادمة، أو تخطط لزيارتنا؟ نحن هنا لمساعدتك! تواصل معنا باستخدام أي من الطرق أدناه.">Have questions about our maze garden, upcoming events, or planning your visit? We're here to help! Reach out to us using any of the methods below.</p>
+            
+            <div class="breadcrumb">
+                <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span data-en="Contact" data-ar="اتصل بنا">Contact</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2 data-en="Contact Information" data-ar="معلومات الاتصال">Contact Information</h2>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-en="Visit Our Maze" data-ar="زر متاهتنا">Visit Our Maze</h3>
+                            <p data-en="Mataha Maze Garden" data-ar="حديقة متاهة ماتاها">Mataha Maze Garden</p>
+                            <p data-en="123 Green Path Avenue" data-ar="123 شارع المسار الأخضر">123 Green Path Avenue</p>
+                            <p data-en="Nature Valley, NV 12345" data-ar="وادي الطبيعة، NV 12345">Nature Valley, NV 12345</p>
+                            <a href="#map" data-en="Get Directions" data-ar="احصل على اتجاهات">Get Directions →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-en="Call Us" data-ar="اتصل بنا">Call Us</h3>
+                            <p data-en="General Inquiries" data-ar="الاستفسارات العامة">General Inquiries</p>
+                            <p><a href="tel:+11234567890">+1 (123) 456-7890</a></p>
+                            <p data-en="Event Bookings" data-ar="حجوزات الفعاليات">Event Bookings</p>
+                            <p><a href="tel:+11234567891">+1 (123) 456-7891</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-en="Email Us" data-ar="راسلنا عبر البريد الإلكتروني">Email Us</h3>
+                            <p data-en="General Questions" data-ar="الأسئلة العامة">General Questions</p>
+                            <p><a href="mailto:info@matahamaze.com">info@matahamaze.com</a></p>
+                            <p data-en="Events & Bookings" data-ar="الفعاليات والحجوزات">Events & Bookings</p>
+                            <p><a href="mailto:events@matahamaze.com">events@matahamaze.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-contact">
+                        <h3 data-en="Follow Our Journey" data-ar="تابع رحلتنا">Follow Our Journey</h3>
+                        <div class="social-icons-contact">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2 data-en="Send Us a Message" data-ar="أرسل لنا رسالة">Send Us a Message</h2>
+                    
+                    <div class="success-message" id="success-message">
+                        <i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                        <h3 data-en="Message Sent Successfully!" data-ar="تم إرسال الرسالة بنجاح!">Message Sent Successfully!</h3>
+                        <p data-en="Thank you for contacting Mataha Maze Garden. We'll get back to you within 24-48 hours." data-ar="شكرًا لتواصلك مع حديقة متاهة ماتاها. سوف نعود إليك في غضون 24-48 ساعة.">Thank you for contacting Mataha Maze Garden. We'll get back to you within 24-48 hours.</p>
+                    </div>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" data-en="Full Name" data-ar="الاسم الكامل">Full Name *</label>
+                            <input type="text" id="name" class="form-control" required 
+                                   data-en-placeholder="Enter your full name" 
+                                   data-ar-placeholder="أدخل اسمك الكامل">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" data-en="Email Address" data-ar="عنوان البريد الإلكتروني">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required 
+                                   data-en-placeholder="Enter your email address" 
+                                   data-ar-placeholder="أدخل عنوان بريدك الإلكتروني">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" data-en="Phone Number" data-ar="رقم الهاتف">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" 
+                                   data-en-placeholder="Enter your phone number (optional)" 
+                                   data-ar-placeholder="أدخل رقم هاتفك (اختياري)">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" data-en="Subject" data-ar="الموضوع">Subject *</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="" disabled selected data-en="Select a subject" data-ar="اختر موضوع">Select a subject</option>
+                                <option value="general" data-en="General Inquiry" data-ar="استفسار عام">General Inquiry</option>
+                                <option value="event" data-en="Event Information" data-ar="معلومات الفعالية">Event Information</option>
+                                <option value="booking" data-en="Group Booking" data-ar="حجز جماعي">Group Booking</option>
+                                <option value="feedback" data-en="Feedback" data-ar="ملاحظات">Feedback</option>
+                                <option value="partnership" data-en="Partnership Opportunity" data-ar="فرصة شراكة">Partnership Opportunity</option>
+                                <option value="other" data-en="Other" data-ar="أخرى">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" data-en="Your Message" data-ar="رسالتك">Your Message *</label>
+                            <textarea id="message" class="form-control" required 
+                                      data-en-placeholder="Type your message here..." 
+                                      data-ar-placeholder="اكتب رسالتك هنا..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            <span data-en="Send Message" data-ar="إرسال الرسالة">Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" id="map">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Find Your Way to Our Maze" data-ar="ابحث عن طريقك إلى متاهتنا">Find Your Way to Our Maze</h2>
+                <p data-en="Located in the heart of Nature Valley, our maze garden is easily accessible from major highways." data-ar="تقع حديقة المتاهة لدينا في قلب وادي الطبيعة، ويمكن الوصول إليها بسهولة من الطرق السريعة الرئيسية.">Located in the heart of Nature Valley, our maze garden is easily accessible from major highways.</p>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3 data-en="Interactive Map Coming Soon" data-ar="الخريطة التفاعلية قريباً">Interactive Map Coming Soon</h3>
+                    <p data-en="We're working on integrating an interactive map to help you find your way to Mataha Maze Garden. In the meantime, you can use GPS coordinates: 40.7128° N, 74.0060° W" data-ar="نعمل على دمج خريطة تفاعلية لمساعدتك في العثور على طريقك إلى حديقة متاهة ماتاها. في الوقت الحالي، يمكنك استخدام إحداثيات GPS: 40.7128° شمالاً، 74.0060° غرباً">We're working on integrating an interactive map to help you find your way to Mataha Maze Garden. In the meantime, you can use GPS coordinates: 40.7128° N, 74.0060° W</p>
+                </div>
+            </div>
+            
+            <div class="transportation-info" style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <div class="transport-option" style="text-align: center; padding: 25px; background-color: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <div style="font-size: 2.5rem; color: var(--light-green); margin-bottom: 15px;">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 style="color: var(--dark-green); margin-bottom: 10px;" data-en="By Car" data-ar="بالسيارة">By Car</h3>
+                    <p data-en="Free parking available on site. Follow signs for Mataha Maze from Highway 101." data-ar="مواقف سيارات مجانية متاحة في الموقع. اتبع لافتات متاهة ماتاها من الطريق السريع 101.">Free parking available on site. Follow signs for Mataha Maze from Highway 101.</p>
+                </div>
+                
+                <div class="transport-option" style="text-align: center; padding: 25px; background-color: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <div style="font-size: 2.5rem; color: var(--light-green); margin-bottom: 15px;">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3 style="color: var(--dark-green); margin-bottom: 10px;" data-en="By Bus" data-ar="بالحافلة">By Bus</h3>
+                    <p data-en="Take bus #45 to Nature Valley station. We're a 10-minute walk from the station." data-ar="خذ الحافلة رقم 45 إلى محطة وادي الطبيعة. نحن على بعد 10 دقائق سيرًا على الأقدام من المحطة.">Take bus #45 to Nature Valley station. We're a 10-minute walk from the station.</p>
+                </div>
+                
+                <div class="transport-option" style="text-align: center; padding: 25px; background-color: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <div style="font-size: 2.5rem; color: var(--light-green); margin-bottom: 15px;">
+                        <i class="fas fa-bicycle"></i>
+                    </div>
+                    <h3 style="color: var(--dark-green); margin-bottom: 10px;" data-en="Bike Friendly" data-ar="صديق للدراجات">Bike Friendly</h3>
+                    <p data-en="Bike racks available. We're located on the Green Valley bike trail." data-ar="أرفف دراجات متاحة. نحن موجودون على مسار دراجات وادي الأخضر.">Bike racks available. We're located on the Green Valley bike trail.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</h2>
+                <p data-en="Quick answers to common questions about Mataha Maze Garden" data-ar="إجابات سريعة على الأسئلة الشائعة حول حديقة متاهة ماتاها">Quick answers to common questions about Mataha Maze Garden</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="What are your opening hours?" data-ar="ما هي ساعات العمل؟">What are your opening hours?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Mataha Maze Garden is open daily from 9:00 AM to 6:00 PM. Last admission is at 5:00 PM. We're open year-round, though hours may vary seasonally. Special evening events are scheduled throughout the year." data-ar="حديقة متاهة ماتاها مفتوحة يومياً من الساعة 9:00 صباحاً إلى 6:00 مساءً. آخر دخول في الساعة 5:00 مساءً. نحن مفتوحون على مدار السنة، على الرغم من أن الساعات قد تختلف موسمياً. يتم جدولة فعاليات مسائية خاصة على مدار العام.">Mataha Maze Garden is open daily from 9:00 AM to 6:00 PM. Last admission is at 5:00 PM. We're open year-round, though hours may vary seasonally. Special evening events are scheduled throughout the year.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="Is the maze suitable for young children?" data-ar="هل المتاهة مناسبة للأطفال الصغار؟">Is the maze suitable for young children?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="Yes! Our maze is designed to be family-friendly. We have a special 'Mini Maze' area for children under 6, and the main maze is appropriate for children 7 and up when accompanied by an adult. We also offer stroller-friendly paths throughout the garden." data-ar="نعم! تم تصميم متاهتنا لتكون مناسبة للعائلة. لدينا منطقة 'المتاهة المصغرة' الخاصة للأطفال دون سن 6 سنوات، والمتاهة الرئيسية مناسبة للأطفال من سن 7 سنوات فما فوق عند مرافقة شخص بالغ. نقدم أيضًا مسارات مناسبة للعربات في جميع أنحاء الحديقة.">Yes! Our maze is designed to be family-friendly. We have a special 'Mini Maze' area for children under 6, and the main maze is appropriate for children 7 and up when accompanied by an adult. We also offer stroller-friendly paths throughout the garden.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="Do I need to book tickets in advance?" data-ar="هل أحتاج إلى حجز التذاكر مسبقاً؟">Do I need to book tickets in advance?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="While walk-ins are welcome, we strongly recommend booking in advance, especially for weekends and special events. Advance booking guarantees entry and often comes with a small discount. You can book tickets online through our website or by calling our booking line." data-ar="بينما نرحب بالزوار بدون حجز مسبق، نوصي بشدة بالحجز المسبق، خاصة في عطلات نهاية الأسبوع والفعاليات الخاصة. يضمن الحجز المسبق الدخول وغالبًا ما يأتي مع خصم صغير. يمكنك حجز التذاكر عبر الإنترنت من خلال موقعنا الإلكتروني أو عن طريق الاتصال بخط الحجز لدينا.">While walk-ins are welcome, we strongly recommend booking in advance, especially for weekends and special events. Advance booking guarantees entry and often comes with a small discount. You can book tickets online through our website or by calling our booking line.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="Are pets allowed in the maze garden?" data-ar="هل يسمح بالحيوانات الأليفة في حديقة المتاهة؟">Are pets allowed in the maze garden?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="We love animals, but to ensure the safety and comfort of all visitors, only service animals are permitted inside the maze garden. We have shaded parking areas where pets can wait comfortably, and water bowls are available at the entrance." data-ar="نحب الحيوانات، ولكن لضمان سلامة وراحة جميع الزوار، يُسمح فقط بحيوانات الخدمة داخل حديقة المتاهة. لدينا مناطق انتظار مظللة حيث يمكن للحيوانات الأليفة الانتظار بشكل مريح، وتتوفر أوعية المياه عند المدخل.">We love animals, but to ensure the safety and comfort of all visitors, only service animals are permitted inside the maze garden. We have shaded parking areas where pets can wait comfortably, and water bowls are available at the entrance.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-en="What happens if it rains during my visit?" data-ar="ماذا يحدث إذا هطل المطر أثناء زيارتي؟">What happens if it rains during my visit?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-en="The maze is an outdoor experience, but we offer rain checks for inclement weather. If heavy rain occurs during your visit, you may request a rain check to return another day. We also have covered picnic areas and a visitor center where you can wait out light rain." data-ar="المتاهة تجربة في الهواء الطلق، لكننا نقدم تأجيلات للمطر في حالة سوء الطقس. إذا حدث هطول أمطار غزيرة أثناء زيارتك، يمكنك طلب تأجيل المطر للعودة في يوم آخر. لدينا أيضًا مناطق نزهة مغطاة ومركز زوار حيث يمكنك الانتظار أثناء المطر الخفيف.">The maze is an outdoor experience, but we offer rain checks for inclement weather. If heavy rain occurs during your visit, you may request a rain check to return another day. We also have covered picnic areas and a visitor center where you can wait out light rain.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>MAZE_</span>GARDEN
+                    </div>
+                    <p data-en="Experience the wonder of nature's labyrinth. Mataha Maze is a living, breathing work of art that changes with the seasons." data-ar="جرب روعة متاهة الطبيعة. متاهة ماتاها هي عمل فني حي يتنفس ويتغير مع الفصول.">Experience the wonder of nature's labyrinth. Mataha Maze is a living, breathing work of art that changes with the seasons.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                        <li><a href="index.html#main-events" data-en="Main Events" data-ar="الفعاليات الرئيسية">Main Events</a></li>
+                        <li><a href="index.html#upcoming-events" data-en="Upcoming Events" data-ar="الفعاليات القادمة">Upcoming Events</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4 data-en="Stay Updated" data-ar="ابقَ على اطلاع">Stay Updated</h4>
+                    <p data-en="Subscribe to get updates on new events and maze news." data-ar="اشترك للحصول على تحديثات حول الفعاليات الجديدة وأخبار المتاهة.">Subscribe to get updates on new events and maze news.</p>
+                    <div class="newsletter-placeholder">
+                        <p data-en="Newsletter coming soon!" data-ar="النشرة الإخبارية قريباً!">Newsletter coming soon!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-en="&copy; 2026. MAZE_GARDEN. | Designed BY Siine AI Center  " data-ar="&copy; 2026. MAZE_GARDEN. | صمم بواسطة مركز سين للذكاء الاصطناعي  ">&copy; 2026. MAZE_GARDEN. | Designed BY Siine AI Center <i class="fas fa-heart"></i> for nature lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Language management function (same as in main page)
+        function setLang(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+            // Update text content
+            document.querySelectorAll('[data-en],[data-ar]').forEach(el => {
+                el.textContent = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-ar');
+            });
+
+            // Update placeholders
+            document.querySelectorAll('[data-en-placeholder],[data-ar-placeholder]').forEach(el => {
+                el.placeholder = lang === 'en' ? el.getAttribute('data-en-placeholder') : el.getAttribute('data-ar-placeholder');
+            });
+
+            // Update select options
+            document.querySelectorAll('option').forEach(el => {
+                if (el.hasAttribute('data-en') && el.hasAttribute('data-ar')) {
+                    el.textContent = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-ar');
+                }
+            });
+
+            // Update active language button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('onclick') === `setLang('${lang}')`) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for saved language preference
+            const savedLang = localStorage.getItem('preferredLanguage');
+            let defaultLang = 'en';
+            
+            if (savedLang === 'en' || savedLang === 'ar') {
+                defaultLang = savedLang;
+            } else if (navigator.language.startsWith('ar')) {
+                defaultLang = 'ar';
+            }
+            
+            // Set the language
+            setLang(defaultLang);
+            
+            // FAQ functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isOpen = answer.classList.contains('open');
+                    
+                    // Close all FAQ answers
+                    document.querySelectorAll('.faq-answer').forEach(ans => {
+                        ans.classList.remove('open');
+                        ans.previousElementSibling.classList.remove('active');
+                    });
+                    
+                    // Open clicked FAQ if it wasn't already open
+                    if (!isOpen) {
+                        answer.classList.add('open');
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Contact form submission
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.getElementById('success-message');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    submitBtn.classList.add('loading');
+                    submitBtn.disabled = true;
+                    
+                    // Simulate form submission
+                    setTimeout(() => {
+                        // Show success message
+                        successMessage.classList.add('show');
+                        
+                        // Scroll to success message
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Reset button
+                        submitBtn.classList.remove('loading');
+                        submitBtn.disabled = false;
+                        
+                        // Hide success message after 8 seconds
+                        setTimeout(() => {
+                            successMessage.classList.remove('show');
+                        }, 8000);
+                    }, 1500);
+                });
+            }
+            
+          
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
